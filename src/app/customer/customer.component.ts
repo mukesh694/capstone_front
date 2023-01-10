@@ -50,28 +50,41 @@ export class CustomerComponent {
 
 
   validateAdd(){
-    this.customerService.validateAddress(this.customer.pin).subscribe((responseData: any)=>{
+    this.customerService.validateAddress(this.customer.pin).subscribe(
+      (responseData)=>{
       this.vd=responseData;
       console.log(responseData);
-    });
-  }
-  validateCreditScore(){
+      console.log("This is validate address method of the customer component")
+      },
+      (err) => {
+        console.log(err);
+      }
+      )
+    };
+
+   validateCreditScore(){
     this.customerService.validateHistroyCredit(this.customer.userName).subscribe((responseData)=>{
       this.dummy=responseData;
       console.log(responseData);
-     });
+     },
+     (err) => {
+      console.log(err);
+    }
+     
+     );
   }
-createNewAccount(){
+     createNewAccount(){
   //console.log(this.customer);
-  this.customerService.createAccount(this.customer).subscribe((responseData)=>{
-    this.message=responseData;
-    alert("successfully new account submitted the form")
-    console.log(responseData);
-  } );
-
-  //  ResultData=>{
-    //alert("successfully account created")
-  //}, error=>alert("Sorry user not registser")); 
+        this.customerService.createAccount(this.customer).subscribe(
+        (responseData)=> {
+      this.message=responseData;
+     console.log(responseData);
+  },
+  (err) => {
+    console.log(err);
+  }
+  );
+  
 }
 
 get add(){
