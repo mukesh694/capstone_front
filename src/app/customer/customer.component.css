@@ -1,0 +1,19 @@
+
+input.ng-invalid.ng-touched{
+    border: 1px solid red;
+}
+
+.container{
+      margin-top: 45px;
+      text-align: center;
+}
+.mb-3{
+    text-align: center;
+    font-size: 27px;
+    font-weight: 550;
+}
+.db{
+    margin-top: 20px;
+    color: green;
+   /* background-color: rgba(0, 255, 149, 0.63); */
+}
